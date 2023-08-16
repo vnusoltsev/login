@@ -1,0 +1,29 @@
+version: "3.6"
+
+services:
+  php:
+    container_name: backend
+    build: ./docker/php
+    volumes:
+      - .:/app
+      - ./docker/php/conf.d/docker-php.ini:/usr/local/etc/php/conf.d/docker-php.ini
+      - ./docker/php/conf.d/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
+    ports:
+      - "8181:8181"
+
+  postgres:
+    container_name: db
+    image: postgres:10.11-alpine
+    environment:
+      POSTGRES_DB: login_database
+      POSTGRES_PASSWORD: dev
+      POSTGRES_USER: dev
+      TZ: UTC
+    volumes:
+      - login_pgdata:/var/lib/postgresql/data
+    ports:
+      - "54327:5432"
+
+
+volumes:
+  login_pgdata:
