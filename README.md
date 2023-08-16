@@ -17,7 +17,7 @@
     npm install &&
     npm run dev
     php artisan serve
-
+    php artisan migrate
 
 ## Описание логики
 - Зарегистрировать несколько пользователей
