@@ -16,6 +16,7 @@
     composer install --ignore-platform-reqs &&
     npm install &&
     npm run dev
+    php artisan migrate
     php artisan serve
 
 ## Запуск сервиса в Docker
