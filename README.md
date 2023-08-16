@@ -18,6 +18,9 @@
     npm run dev
     php artisan serve
 
+## Запуск сервиса в Docker
+	docker-compose build
+	docker-compose up -d
 
 ## Описание логики
 - Зарегистрировать несколько пользователей
